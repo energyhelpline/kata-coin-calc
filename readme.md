@@ -3,53 +3,75 @@
 
 ## Summary
 
-Write a simple PHP web application that, given a figure in pence, will calculate the minimum number of standard UK denomination coins needed to equal that amount.
+Write a simple PHP web application that, given an input figure in pounds and/or pence, will calculate the minimum number of standard UK denomination coins needed to equal that amount.
 
-Eg. 123p = 0 x £2, 1 x £1, 0 x 50p, 1 x 20p, 0 x 10p, 0 x 5p, 1 x 2p, 1 x 1p
+Eg.
+
+170 (or 1.70) = 1 x £1, 1 x 50p, 1 x 20p
 
 The test should take 1-2 hours.
 
 ## Requirements
 
- * Account for only the main UK coins: £2, £1, 50p, 20p, 10p, 5p, 2p and 1p coins.
- * The app should be wriiten using only PHP, JS, CSS and HTML (libraries are allowed).
- * The user interface should consist of an HTML page with an input field that accepts an 'amount' string (Eg. "92p", "£2.12") and displays the number of each coin denomination needed when the user hits 'enter'.
- * Include a README with any instructions, libraries, build files in order for us to run & view your code. 
+ * Account for the UK coins: £2, £1, 50p, 20p, 2p and 1p coins
+ * The app should be wriiten using only PHP, JS, CSS and HTML
+ * libraries and frameworks are allowed but not mandatory
+ * The user interface should consist of an HTML page with an input field that accepts an 'amount' string (Eg. "92p", "£2.12")
+ * The response should display the number of each coin denomination needed when the user hits enter
+ * Include a README with any instructions, libraries, build files in order for us to run & view your code 
  * The README should include notes on any enhancements, ideas, etc for future improvement if there are any
  * Submission should be in the form of a link to a github repo (or similar publically available code base)
 
 ## What we are looking for
 
- * High quality, secure, maintainable code.
- * Test cases for your code.
- * Appropriately documented and/or readable code.
- * Consistent coding standards.
- * Accessible, semantic, valid HTML.
- * Extensible user input parsing and validation.
- * Logical separation of functionality (Eg, input, controllers, models, utils, views) following standard patterns.
+ * High quality, secure, maintainable code
+ * Test cases for your code
+ * Appropriately documented and/or readable code and instructions
+ * Consistent coding standards
+ * Accessible, semantic, valid HTML
+ * Extensible user input parsing and validation
+ * Logical separation of functionality (Eg, input, controllers, models, utils, views) following standard patterns
  
 ## Tests
 
- * Valid inputs are: integers (123), floats of arbitrary length (1.234), numbers prefaced with `£` and/or suffixed with `p`
+ * Valid inputs are: 
+
+ 	integers (123)  
+ 	floats of arbitrary length (1.234)  
+ 	numbers prefaced with `£` and/or suffixed with `p` (£12, £2.34, 123p, £3.45p)
+
  * Invalid inputs are anything other than valid inputs (e.g. `1x` is invalid)
  * Invalid inputs should raise an error (or be ignored) and return zero coins required
 
-A [test cases](tests.csv) file is included of the form:
+## Acceptance tests:
 
-input: html input
-pence: html input in pence
-£2: number of two pound coins required
-£1: number of one pound coins required
-50p: number of fifty pence coins required
-20p: number of twenty pence coins required
-10p: number of ten pence coins required
-5p: number of five pence coins required
-2p: number of two pence coins required
-1p: number of one pence coins required
-test case: textual description of the test
-sum: sum of numbers of each coin in pence
-checksum: validates the test data (true if 'pence' matches 'sum'). May be ignored
+The following inputs are valid and should return coin amounts:
 
-**Note**: some test cases are expected to fail due to invalid input
+| input         | pence (canonical) | description                             |
+|---------------|-------------------|-----------------------------------------|
+| 4             |    4              | single digit                            |
+| 85            |   85              | double digit                            |
+| 197p          |  197              | pence symbol                            |
+| 2p            |    2              | pence symbol single digit               |
+| 1.87          |  187              | pounds decimal                          |
+| £1.23         |  123              | pound symbol                            |
+| £2            |  200              | single digit pound symbol               |
+| £10           | 1000              | double digit pound symbol               |
+| £1.87p        |  187              | pound and pence symbol                  |
+| £1p           |  100              | missing pence                           |
+| £1.p          |  100              | missing pence but present decimal point |
+| 001.41p       |  141              | buffered zeros                          |
+| 4.235p        |  424              | rounding three decimal places to two    |
+| £1.257422457p |  126              | rounding with symbols                   |
 
-These test cases are provided for convenience. They do not need to be incorporated into the code base in the provided format but their use is encouraged. They will be used for manual testing later along with similar variants.
+The following inputs are **NOT** valid
+
+| input  | pence (canonical) | description              |
+|--------|-------------------|--------------------------|
+|        | 0                 | empty string             |
+| 1x     | 0                 | non-numeric character    |
+| £1x.0p | 0                 | non-numeric character    |
+| £p     | 0                 | missing digits           | 
+
+
+For convenience the tests above are included in [test cases](tests.csv)

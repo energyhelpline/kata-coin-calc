@@ -1,19 +1,19 @@
-﻿input,pence,£2,£1,50p,20p,10p,5p,2p,1p,test case,sum,checksum
-4,4,0,0,0,0,0,0,2,0,single digit,4,TRUE
-85,85,0,0,1,1,1,1,0,0,double digit,85,TRUE
-197p,197,0,1,1,2,0,1,1,0,triple digit with p,197,TRUE
-2p,2,0,0,0,0,0,0,1,0,single digit with p,2,TRUE
-1.87,187,0,1,1,1,1,1,1,0,triple digit with decimal point,187,TRUE
-1.23,123,0,1,0,1,0,0,1,1,triple digit with decimal point,123,TRUE
-2,2,0,0,0,0,0,0,1,0,single digit,2,TRUE
-10,10,0,0,0,0,1,0,0,0,double digit,10,TRUE
-£1.87p,187,0,1,1,1,1,1,1,0,double digit with £ and p ,187,TRUE
-£1p,100,0,1,0,0,0,0,0,0,single digit with £ and p ,100,TRUE
-£1.p,100,0,1,0,0,0,0,0,0,"single digit with £, p and decimal point ",100,TRUE
-001.41p,141,0,1,0,2,0,0,0,1,leading float with decimal point and p,141,TRUE
-4.235p,424,2,0,0,1,0,0,2,0,trailing float with decimal point and p,424,TRUE
-£1.257422457p,126,0,1,0,1,0,1,0,1,"trailing float with £, p and decimal point",126,TRUE
-,0,0,0,0,0,0,0,0,0,error: empty string input,0,TRUE
-1x,0,0,0,0,0,0,0,0,0,error: non numeric input,0,TRUE
-£1x.0p,0,0,0,0,0,0,0,0,0,error: non numeric input,0,TRUE
-£p,0,0,0,0,0,0,0,0,0,error: no valid input,0,TRUE
+﻿input,pence,description
+4,4,single digit
+85,85,double digit
+197p,197,triple digit with p
+2p,2,single digit with p
+1.87,187,triple digit with decimal point
+£1.23,123,triple digit with decimal point
+£2,200,single digit
+£10,1000,double digit
+£1.87p,187,double digit with £ and p
+£1p,100,single digit with £ and p
+£1.p,100,single digit with £, p and decimal point
+001.41p,141,leading float with decimal point and p
+4.235p,424,trailing float with decimal point and p
+£1.257422457p,126,trailing float with £, p and decimal point
+,0,error: empty string input
+1x,0,error: non numeric input
+£1x.0p,0,error: non numeric input
+£p,0,error: no valid input
