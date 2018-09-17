@@ -9,10 +9,10 @@
 £10,1000,double digit
 £1.87p,187,double digit with £ and p
 £1p,100,single digit with £ and p
-£1.p,100,single digit with £, p and decimal point
+£1.p,100,single digit with £ p and decimal point
 001.41p,141,leading float with decimal point and p
 4.235p,424,trailing float with decimal point and p
-£1.257422457p,126,trailing float with £, p and decimal point
+£1.257422457p,126,trailing float with £ p and decimal point
 ,0,error: empty string input
 1x,0,error: non numeric input
 £1x.0p,0,error: non numeric input
