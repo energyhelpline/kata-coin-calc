@@ -14,13 +14,13 @@ The test should take 1-2 hours.
 ## Requirements
 
  * Account for the UK coins: £2, £1, 50p, 20p, 2p and 1p coins
- * The app should be wriiten using only PHP, JS, CSS and HTML
+ * The app should be written using only PHP, JS, CSS and HTML
  * libraries and frameworks are allowed but not mandatory
  * The user interface should consist of an HTML page with an input field that accepts an 'amount' string (Eg. "92p", "£2.12")
  * The response should display the number of each coin denomination needed when the user hits enter
  * Include a README with any instructions, libraries, build files in order for us to run & view your code 
  * The README should include notes on any enhancements, ideas, etc for future improvement if there are any
- * Submission should be in the form of a link to a github repo (or similar publically available code base)
+ * Submission should be in the form of a link to a github repo (or similar publicly available code base)
 
 ## What we are looking for
 
@@ -30,7 +30,7 @@ The test should take 1-2 hours.
  * Consistent coding standards
  * Accessible, semantic, valid HTML
  * Extensible user input parsing and validation
- * Logical separation of functionality (Eg, input, controllers, models, utils, views) following standard patterns
+ * Logical separation of functionality (e.g. input, controllers, models, utils, views) following standard patterns
  
 ## Tests
 
